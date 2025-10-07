@@ -17,7 +17,7 @@ public:
    
     Person() : lastName(""), firstName(""), middleName(""), gender(""), birthYear(0) {}
     Person(string ln, string fn, string mn, string g, int by) {
-        if (by < 1900 || by > 2025) throw invalid_argument("Некоректний рік народження!");
+        if (by < 1900 || by > 2025) throw invalid_argument("ГЌГҐГЄГ®Г°ГҐГЄГІГ­ГЁГ© Г°ВіГЄ Г­Г Г°Г®Г¤Г¦ГҐГ­Г­Гї!");
         lastName = ln;
         firstName = fn;
         middleName = mn;
@@ -27,19 +27,19 @@ public:
 
    
     friend istream& operator>>(istream& in, Person& p) {
-        cout << "Введіть прізвище: ";
+        cout << "Г‚ГўГҐГ¤ВіГІГј ГЇГ°ВіГ§ГўГЁГ№ГҐ: ";
         in >> p.lastName;
-        cout << "Введіть ім'я: ";
+        cout << "Г‚ГўГҐГ¤ВіГІГј ВіГ¬'Гї: ";
         in >> p.firstName;
-        cout << "Введіть по батькові: ";
+        cout << "Г‚ГўГҐГ¤ВіГІГј ГЇГ® ГЎГ ГІГјГЄГ®ГўВі: ";
         in >> p.middleName;
-        cout << "Введіть стать: ";
+        cout << "Г‚ГўГҐГ¤ВіГІГј Г±ГІГ ГІГј: ";
         in >> p.gender;
-        cout << "Введіть рік народження: ";
+        cout << "Г‚ГўГҐГ¤ВіГІГј Г°ВіГЄ Г­Г Г°Г®Г¤Г¦ГҐГ­Г­Гї: ";
         in >> p.birthYear;
 
         if (p.birthYear < 1925 || p.birthYear > 2025)
-            throw invalid_argument("Помилка! Рік народження некоректний.");
+            throw invalid_argument("ГЏГ®Г¬ГЁГ«ГЄГ ! ГђВіГЄ Г­Г Г°Г®Г¤Г¦ГҐГ­Г­Гї Г­ГҐГЄГ®Г°ГҐГЄГІГ­ГЁГ©.");
 
         return in;
     }
@@ -47,8 +47,8 @@ public:
     
     friend ostream& operator<<(ostream& out, const Person& p) {
         out << p.lastName << " " << p.firstName << " " << p.middleName
-            << ", стать: " << p.gender
-            << ", рік народження: " << p.birthYear;
+            << ", Г±ГІГ ГІГј: " << p.gender
+            << ", Г°ВіГЄ Г­Г Г°Г®Г¤Г¦ГҐГ­Г­Гї: " << p.birthYear;
         return out;
     }
 
@@ -68,22 +68,22 @@ int main() {
         Person p1;
         cin >> p1;
 
-        cout << "\nВведена особа:\n" << p1 << endl;
+        cout << "\nГ‚ГўГҐГ¤ГҐГ­Г  Г®Г±Г®ГЎГ :\n" << p1 << endl;
 
-        cout << "\nПошук за прізвищем 'Підставський': ";
-        cout << (p1.search("Підставський") ? "знайдено" : "не знайдено") << endl;
+        cout << "\nГЏГ®ГёГіГЄ Г§Г  ГЇГ°ВіГ§ГўГЁГ№ГҐГ¬ 'ГЏВіГ¤Г±ГІГ ГўГ±ГјГЄГЁГ©': ";
+        cout << (p1.search("ГЏВіГ¤Г±ГІГ ГўГ±ГјГЄГЁГ©") ? "Г§Г­Г Г©Г¤ГҐГ­Г®" : "Г­ГҐ Г§Г­Г Г©Г¤ГҐГ­Г®") << endl;
 
-        cout << "Пошук за прізвищем та ім'ям 'Підставський Назар': ";
-        cout << (p1.search("Підставський", "Назарій") ? "знайдено" : "не знайдено") << endl;
+        cout << "ГЏГ®ГёГіГЄ Г§Г  ГЇГ°ВіГ§ГўГЁГ№ГҐГ¬ ГІГ  ВіГ¬'ГїГ¬ 'ГЏВіГ¤Г±ГІГ ГўГ±ГјГЄГЁГ© ГЌГ Г§Г Г°': ";
+        cout << (p1.search("ГЏВіГ¤Г±ГІГ ГўГ±ГјГЄГЁГ©", "ГЌГ Г§Г Г°ВіГ©") ? "Г§Г­Г Г©Г¤ГҐГ­Г®" : "Г­ГҐ Г§Г­Г Г©Г¤ГҐГ­Г®") << endl;
 
-        cout << "Пошук за роком народження 2006: ";
-        cout << (p1.search(2006) ? "знайдено" : "не знайдено") << endl;
+        cout << "ГЏГ®ГёГіГЄ Г§Г  Г°Г®ГЄГ®Г¬ Г­Г Г°Г®Г¤Г¦ГҐГ­Г­Гї 2006: ";
+        cout << (p1.search(2006) ? "Г§Г­Г Г©Г¤ГҐГ­Г®" : "Г­ГҐ Г§Г­Г Г©Г¤ГҐГ­Г®") << endl;
     }
     catch (invalid_argument& e) {
-        cout << "Виняток: " << e.what() << endl;
+        cout << "Г‚ГЁГ­ГїГІГ®ГЄ: " << e.what() << endl;
     }
     catch (...) {
-        cout << "Невідома помилка!" << endl;
+        cout << "ГЌГҐГўВіГ¤Г®Г¬Г  ГЇГ®Г¬ГЁГ«ГЄГ !" << endl;
     }
 
     return 0;
