@@ -24,9 +24,9 @@ public:
     }
 
     void showInfo() const {
-        cout << "Êîëî: ðàä³óñ = " << radius
-            << ", ïëîùà = " << area()
-            << ", äîâæèíà êîëà = " << length() << endl;
+        cout << "Ä˜Ã®Ã«Ã®: Ä‘Å•Ã¤Å‚Ã³Å„ = " << radius
+            << ", ÄÃ«Ã®Å¯Å• = " << area()
+            << ", Ã¤Ã®Ã¢Ä‡ÄÃ­Å• Ä™Ã®Ã«Å• = " << length() << endl;
     }
 
     double getRadius() const {
@@ -53,10 +53,10 @@ public:
     }
 
     void showInfo() const {
-        cout << "Ïðÿìîêóòíèê: øèðèíà = " << width
-            << ", âèñîòà = " << height
-            << ", ïëîùà = " << area()
-            << ", ïåðèìåòð = " << perimeter() << endl;
+        cout << "ÄŽÄ‘Ë™Ä›Ã®Ä™Ã³ÅˆÃ­ÄÄ™: Å™ÄÄ‘ÄÃ­Å• = " << width
+            << ", Ã¢ÄÅ„Ã®ÅˆÅ• = " << height
+            << ", ÄÃ«Ã®Å¯Å• = " << area()
+            << ", ÄÄºÄ‘ÄÄ›ÄºÅˆÄ‘ = " << perimeter() << endl;
     }
 };
 
@@ -68,7 +68,7 @@ public:
     }
 
     void showAll() {
-        cout << "\n=== ²íôîðìàö³ÿ ïðî âïèñàíèé ïðÿìîêóòíèê ³ êîëî ===\n";
+        cout << "\n=== Ë›Ã­Ã´Ã®Ä‘Ä›Å•Ã¶Å‚Ë™ ÄÄ‘Ã® Ã¢ÄÄÅ„Å•Ã­ÄÃ© ÄÄ‘Ë™Ä›Ã®Ä™Ã³ÅˆÃ­ÄÄ™ Å‚ Ä™Ã®Ã«Ã® ===\n";
         Circle::showInfo();
         Rectangle::showInfo();
     }
@@ -76,29 +76,29 @@ public:
     void writeToFile(const string& filename) {
         ofstream fout(filename);
         if (!fout) {
-            cout << "Ïîìèëêà â³äêðèòòÿ ôàéëó äëÿ çàïèñó!\n";
+            cout << "ÄŽÃ®Ä›ÄÃ«Ä™Å• Ã¢Å‚Ã¤Ä™Ä‘ÄÅˆÅˆË™ Ã´Å•Ã©Ã«Ã³ Ã¤Ã«Ë™ Ã§Å•ÄÄÅ„Ã³!\n";
             return;
         }
-        fout << "Êîëî:\n";
-        fout << "  Ðàä³óñ = " << radius << endl;
-        fout << "  Ïëîùà = " << Circle::area() << endl;
-        fout << "  Äîâæèíà êîëà = " << length() << endl;
-        fout << "Ïðÿìîêóòíèê:\n";
-        fout << "  Øèðèíà = " << width << endl;
-        fout << "  Âèñîòà = " << height << endl;
-        fout << "  Ïëîùà = " << Rectangle::area() << endl;
-        fout << "  Ïåðèìåòð = " << perimeter() << endl;
+        fout << "Ä˜Ã®Ã«Ã®:\n";
+        fout << "  ÄÅ•Ã¤Å‚Ã³Å„ = " << radius << endl;
+        fout << "  ÄŽÃ«Ã®Å¯Å• = " << Circle::area() << endl;
+        fout << "  Ã„Ã®Ã¢Ä‡ÄÃ­Å• Ä™Ã®Ã«Å• = " << length() << endl;
+        fout << "ÄŽÄ‘Ë™Ä›Ã®Ä™Ã³ÅˆÃ­ÄÄ™:\n";
+        fout << "  Å˜ÄÄ‘ÄÃ­Å• = " << width << endl;
+        fout << "  Ã‚ÄÅ„Ã®ÅˆÅ• = " << height << endl;
+        fout << "  ÄŽÃ«Ã®Å¯Å• = " << Rectangle::area() << endl;
+        fout << "  ÄŽÄºÄ‘ÄÄ›ÄºÅˆÄ‘ = " << perimeter() << endl;
         fout.close();
-        cout << "\nÄàí³ çàïèñàíî ó ôàéë: " << filename << endl;
+        cout << "\nÃ„Å•Ã­Å‚ Ã§Å•ÄÄÅ„Å•Ã­Ã® Ã³ Ã´Å•Ã©Ã«: " << filename << endl;
     }
 
     void readFromFile(const string& filename) {
         ifstream fin(filename);
         if (!fin) {
-            cout << "Ïîìèëêà â³äêðèòòÿ ôàéëó äëÿ ÷èòàííÿ!\n";
+            cout << "ÄŽÃ®Ä›ÄÃ«Ä™Å• Ã¢Å‚Ã¤Ä™Ä‘ÄÅˆÅˆË™ Ã´Å•Ã©Ã«Ã³ Ã¤Ã«Ë™ Ã·ÄÅˆÅ•Ã­Ã­Ë™!\n";
             return;
         }
-        cout << "\n=== Ç÷èòàí³ äàí³ ç ôàéëó ===\n";
+        cout << "\n=== Ã‡Ã·ÄÅˆÅ•Ã­Å‚ Ã¤Å•Ã­Å‚ Ã§ Ã´Å•Ã©Ã«Ã³ ===\n";
         string line;
         while (getline(fin, line)) {
             cout << line << endl;
@@ -112,7 +112,7 @@ int main() {
     setlocale(LC_ALL, "Ukrainian");
 
     double r;
-    cout << "Ââåä³òü ðàä³óñ êîëà: ";
+    cout << "Ã‚Ã¢ÄºÃ¤Å‚ÅˆÃ¼ Ä‘Å•Ã¤Å‚Ã³Å„ Ä™Ã®Ã«Å•: ";
     cin >> r;
 
     RectInCircle obj(r);
